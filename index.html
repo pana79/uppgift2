@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -139,7 +140,7 @@
             <div class="col-md-12 grid-margin">
                 <div class="card bg-white">
                   <div class="card-body d-flex align-items-center justify-content-between">
-                    <h4 class="mt-1 mb-1">Hi User, Welcomeback!</h4>
+                    <h4 id="fullName"class="mt-1 mb-1">Hi User, Welcomeback!</h4>
                   </div>
                 </div>
             </div>
@@ -636,10 +637,38 @@
       </div>
     </div>
   </div>
-  <script src="js/js/vendor.bundle.base.js"></script>
+  <script src="js/js/vendor.bundle.base.js"></script> -->
   <script src="js/chart.js/Chart.min.js"></script>
   <script src="js/progressbar.js/progressbar.min.js"></script>
   <script src="js/dashboard.js"></script>
+  <script src="js/json.js"></script>
+  <!-- <script>
+    function myFunction() {
+      console.log('hej')
+    function getFullName(firstName, lastName){
+        fetch(`https://inlupp-fa.azurewebsites.net/api/users?firstName=${firstName}&lastName=${lastName}`)
+        .then(response=>response.text())
+        .then(data=>{
+            console.log(data)
+            return data
+         
+
+        })
+
+    }
+    function getTotalSales(){
+        fetch(`https://inlupp-fa.azurewebsites.net/api/users?firstname=${firstName}&lastname=${lastName}`)
+        .then(response=>response.text())
+        .then(data=>{
+            return data
+        })
+
+    }
+
+   fullName=getFullName(Patrik, Näsström)
+   document.getElementById("fullName").innerHTML = fullName + ",Welcome back!";
+    }
+    </script> -->
 
 </body>
 </html>
