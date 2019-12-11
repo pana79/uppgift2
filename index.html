@@ -249,7 +249,7 @@
                     <div class="text-white">
                       <p class="font-weight-medium mt-md-2 mt-xl-0 text-md-center text-xl-left">Total Sales</p>
                       <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
-                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1">$508</h3>
+                        <h3 id="totalSales" class="mb-0 mb-md-1 mb-lg-0 mr-1"></h3>
                         <small class="mb-0">This month</small>
                       </div>
                     </div>
@@ -637,38 +637,10 @@
       </div>
     </div>
   </div>
-  <script src="js/js/vendor.bundle.base.js"></script> -->
+  <script src="js/js/vendor.bundle.base.js"></script>
   <script src="js/chart.js/Chart.min.js"></script>
   <script src="js/progressbar.js/progressbar.min.js"></script>
   <script src="js/dashboard.js"></script>
   <script src="js/json.js"></script>
-  <!-- <script>
-    function myFunction() {
-      console.log('hej')
-    function getFullName(firstName, lastName){
-        fetch(`https://inlupp-fa.azurewebsites.net/api/users?firstName=${firstName}&lastName=${lastName}`)
-        .then(response=>response.text())
-        .then(data=>{
-            console.log(data)
-            return data
-         
-
-        })
-
-    }
-    function getTotalSales(){
-        fetch(`https://inlupp-fa.azurewebsites.net/api/users?firstname=${firstName}&lastname=${lastName}`)
-        .then(response=>response.text())
-        .then(data=>{
-            return data
-        })
-
-    }
-
-   fullName=getFullName(Patrik, Näsström)
-   document.getElementById("fullName").innerHTML = fullName + ",Welcome back!";
-    }
-    </script> -->
-
 </body>
 </html>
