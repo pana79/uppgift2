@@ -13,7 +13,7 @@
         labels: ["Mon","","Tue","", "Wed","", "Thu","", "Fri","", "Sat"],
         datasets: [
           {
-            data: [260000, 200000, 290000, 230000, 200000, 180000, 180000, 360000, 240000, 280000, 180000],
+            data: [60000, 200000, 290000, 230000, 200000, 180000, 180000, 360000, 240000, 280000, 180000],
             backgroundColor: [
               'rgba(61, 165, 244, .0)'
             ],
@@ -25,7 +25,7 @@
             label: "services"
           },
           {
-            data: [160000, 120000, 175000, 290000, 380000, 210000, 320000, 150000, 310000, 180000, 160000],
+            data: [60000, 120000, 175000, 290000, 380000, 210000, 320000, 150000, 310000, 180000, 160000],
             backgroundColor: [
               'rgba(241, 83, 110, .0)'
             ],
@@ -115,6 +115,9 @@
         data: areaData,
         options: areaOptions
       });
+      updateRevenueChart(revenueChart,`https://inlupp-fa.azurewebsites.net/api/total-sales-chart`)
+  
+
     }
    
     if ($("#users-chart").length) {
@@ -193,7 +196,7 @@
         options: areaOptions
       });
     
-      updateChart(salesChart)
+      updateChart(salesChart,`https://inlupp-fa.azurewebsites.net/api/total-users`)
     }
 
     if ($("#users-chart-dark").length) {
@@ -274,7 +277,7 @@
       var areaData = {
         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug","Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr","May"],
         datasets: [{
-            data: [220, 120, 140, 135, 160, 65, 160, 135, 190,165, 120, 160, 140, 140, 130, 120,  150],
+            data: [20, 120, 40, 135, 160, 65, 160, 135, 190,165, 120, 160, 140, 140, 130, 120,  150],
             backgroundColor: [
               '#e5f2ff'
             ],
@@ -342,6 +345,8 @@
         data: areaData,
         options: areaOptions
       });
+
+      updateChart(salesChart,`https://inlupp-fa.azurewebsites.net/api/total-projects`)
     }
     
     if ($('#offlineProgress').length) {
@@ -389,7 +394,9 @@
       });
   
       bar.text.style.fontSize = '1rem';
-      bar.animate(.65); // Number from 0.0 to 1.0
+      bar.animate(.15); // Number from 0.0 to 1.0
+      getDownloadValue(bar,0)
+     
     }
 
     if ($('#onlineProgress').length) {
@@ -437,7 +444,8 @@
       });
   
       bar.text.style.fontSize = '1rem';
-      bar.animate(.25); // Number from 0.0 to 1.0
+      bar.animate(.05); // Number from 0.0 to 1.0
+      getDownloadValue(bar,1)
     }
 
     if ($('#offlineProgressDark').length) {
