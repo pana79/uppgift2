@@ -78,23 +78,15 @@ async function getUserDataset(salesChart) {
 
    
 }
-async function updateChart(salesChart) {
-    try {
-        // salesChart=salesChart
-        const response = await fetch(`https://inlupp-fa.azurewebsites.net/api/total-users`)
-        const data = await response.json()
-        // console.log(data)
+
+async function getValueFromAPI(){
+    try{
+        const response = await fetch(`https://inlupp-fa.azurewebsites.net/api/downloads`)
+        const data = await response.json()      
+            console.log(data[0].circleValue)
+            
+        return data[0].circleValue
+    }
     
-        let datasetAPI = data.dataset
-        // let key=array
-        // console.log('***Dataset*****')
-        // console.log(datasetAPI)
-
-        salesChart.data.datasets[0].data=datasetAPI.data
-        salesChart.data.labels=datasetAPI.labels
-        salesChart.update();
-        
-    } catch (error) { console.log(error) }
-
-   
+  
 }
