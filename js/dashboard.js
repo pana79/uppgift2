@@ -1,6 +1,13 @@
+
+
 (function($) {
   'use strict';
+  
+
   $(function() {
+   
+  
+
     if ($("#total-sales-chart").length) {
       var areaData = {
         labels: ["Mon","","Tue","", "Wed","", "Thu","", "Fri","", "Sat"],
@@ -109,12 +116,15 @@
         options: areaOptions
       });
     }
-
+   
     if ($("#users-chart").length) {
+     
+      console.log($("#users-chart").length)
+  
       var areaData = {
         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
         datasets: [{
-            data: [160, 105, 225, 140, 180, 61, 120, 60, 90],
+            data: [80, 10, 20, 140, 80, 61, 120, 60, 90],
             backgroundColor: [
               '#e0fff4'
             ],
@@ -182,6 +192,8 @@
         data: areaData,
         options: areaOptions
       });
+    
+      updateChart(salesChart)
     }
 
     if ($("#users-chart-dark").length) {
@@ -331,7 +343,7 @@
         options: areaOptions
       });
     }
-
+    
     if ($('#offlineProgress').length) {
       var bar = new ProgressBar.Circle(offlineProgress, {
         color: '#000',
